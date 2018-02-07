@@ -11,6 +11,7 @@
     "@types/node": "^9.4.1",
     "@types/react": "^16.0.36",
     "@types/react-dom": "^16.0.3",
+    "gh-pages": "^1.1.0",
     "react-scripts-ts": "2.13.0",
     "typescript": "^2.7.1"
   },
@@ -18,7 +19,9 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "description": "Resolve file system paths",
   "main": "index.js",
