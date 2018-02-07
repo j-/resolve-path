@@ -1,5 +1,5 @@
 import reducer from './reducer-path';
-import { addSegment } from './actions';
+import { addSegment, reset } from './actions';
 
 it('can add a single segment', () => {
 	const state = {
@@ -22,4 +22,15 @@ it('can resolve multiple segments', () => {
 	const result = reducer(state, action);
 	expect(result.segments).toEqual(['/foo', 'bar', 'qux', '../baz']);
 	expect(result.resolved).toBe('/foo/bar/baz');
+});
+
+it('can reset', () => {
+	const state = {
+		segments: ['/foo', 'bar', 'qux', '../baz'],
+		resolved: '/foo/bar/baz',
+	};
+	const action = reset();
+	const result = reducer(state, action);
+	expect(result.segments).toEqual([]);
+	expect(result.resolved).toBe('');
 });

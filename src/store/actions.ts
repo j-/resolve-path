@@ -17,3 +17,15 @@ export const addSegment = (segment: string): ActionAddSegment => ({
 		segment,
 	},
 });
+
+export interface ActionReset extends Action {
+	type: 'Reset';
+}
+
+export const isActionReset = (action: Action): action is ActionReset => (
+	action.type === 'Reset'
+);
+
+export const reset = (): ActionReset => ({
+	type: 'Reset',
+});

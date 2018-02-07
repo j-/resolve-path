@@ -1,6 +1,6 @@
 import { Reducer } from 'redux';
 import { posix } from 'path';
-import { isActionAddSegment } from './actions';
+import { isActionAddSegment, isActionReset } from './actions';
 const { resolve } = posix;
 
 export interface ReducerState {
@@ -22,6 +22,10 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 			segments,
 			resolved,
 		};
+	}
+
+	if (isActionReset(action)) {
+		return DEFAULT_STATE;
 	}
 
 	return state;
