@@ -18,6 +18,26 @@ export const addSegment = (segment: string): ActionAddSegment => ({
 	},
 });
 
+export interface ActionSetSegment extends Action {
+	type: 'SetSegment';
+	data: {
+		index: number;
+		segment: string;
+	};
+}
+
+export const isActionSetSegment = (action: Action): action is ActionSetSegment => (
+	action.type === 'SetSegment'
+);
+
+export const setSegment = (index: number, segment: string): ActionSetSegment => ({
+	type: 'SetSegment',
+	data: {
+		index,
+		segment,
+	},
+});
+
 export interface ActionReset extends Action {
 	type: 'Reset';
 }
