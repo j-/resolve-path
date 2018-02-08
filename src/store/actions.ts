@@ -49,3 +49,21 @@ export const isActionReset = (action: Action): action is ActionReset => (
 export const reset = (): ActionReset => ({
 	type: 'Reset',
 });
+
+export interface ActionSetFocus extends Action {
+	type: 'SetFocus';
+	data: {
+		index: number;
+	};
+}
+
+export const isActionSetFocus = (action: Action): action is ActionSetFocus => (
+	action.type === 'SetFocus'
+);
+
+export const setFocus = (index: number): ActionSetFocus => ({
+	type: 'SetFocus',
+	data: {
+		index,
+	},
+});
