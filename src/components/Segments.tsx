@@ -7,7 +7,7 @@ export interface Props {
 
 const Segments = (props: Props) => {
 	const children = [];
-	for (let i = 0; i < props.segmentCount; i++) {
+	for (let i = 0; i < props.segmentCount + 1; i++) {
 		children.push(
 			<div className="Segments-item" key={i}>
 				<SegmentInput index={i} />
