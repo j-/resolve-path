@@ -9,7 +9,7 @@ export interface Props {
 
 const SegmentInput = (props: Props) => (
 	<input
-		className="SegmentInput pt-input pt-fill"
+		className="SegmentInput pt-input pt-fill pt-large"
 		type="text"
 		value={props.value}
 		autoFocus={props.autoFocus}

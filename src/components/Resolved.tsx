@@ -8,7 +8,7 @@ export interface Props {
 const Resolved = (props: Props) => (
 	<div className="Resolved">
 		<input
-			className="pt-input pt-fill Resolved-input"
+			className="pt-input pt-fill pt-large Resolved-input"
 			type="text"
 			readOnly={true}
 			value={props.resolved}
