@@ -16,7 +16,7 @@ const Resolved = (props: Props) => (
 			value={props.resolved}
 		/>
 		<button
-			className="pt-button pt-minimal pt-icon-large pt-intent-primary pt-icon-clipboard"
+			className="pt-button pt-minimal pt-intent-primary pt-icon-clipboard"
 			onClick={() => copy(props.resolved)}
 		/>
 	</div>

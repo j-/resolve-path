@@ -33,7 +33,7 @@ export default class SegmentInput extends React.PureComponent<Props> {
 					ref={(el) => this.input = el as HTMLInputElement}
 				/>
 				{showRemoveButton && <button
-					className="pt-button pt-minimal pt-icon-large pt-icon-cross"
+					className="pt-button pt-minimal pt-icon-cross"
 					onClick={onRemove}
 				/>}
 			</div>
