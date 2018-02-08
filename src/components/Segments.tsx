@@ -21,10 +21,16 @@ const Segments = (props: Props) => {
 		switch (e.key) {
 			case 'Enter':
 			case 'ArrowDown':
+				if (props.focusIndex >= props.segmentCount || props.segmentCount === 0) {
+					break;
+				}
 				e.preventDefault();
 				props.setFocus(props.focusIndex + 1);
 				break;
 			case 'ArrowUp':
+				if (props.focusIndex <= 0) {
+					break;
+				}
 				e.preventDefault();
 				props.setFocus(props.focusIndex - 1);
 				break;
