@@ -18,7 +18,7 @@ interface OwnProps {
 }
 
 const mapStateToProps = (state: ReducerState, props: OwnProps): StateProps => ({
-	value: getSegmentAtIndex(state, props.index),
+	value: getSegmentAtIndex(state, props.index) || '',
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>, props: OwnProps): DispatchProps => ({

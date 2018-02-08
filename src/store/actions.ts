@@ -67,3 +67,21 @@ export const setFocus = (index: number): ActionSetFocus => ({
 		index,
 	},
 });
+
+export interface ActionRemoveSegment extends Action {
+	type: 'RemoveSegment';
+	data: {
+		index: number;
+	};
+}
+
+export const isActionRemoveSegment = (action: Action): action is ActionRemoveSegment => (
+	action.type === 'RemoveSegment'
+);
+
+export const removeSegment = (index: number): ActionRemoveSegment => ({
+	type: 'RemoveSegment',
+	data: {
+		index,
+	},
+});

@@ -1,6 +1,12 @@
 import { Reducer } from 'redux';
 import { resolve } from 'path';
-import { isActionAddSegment, isActionSetSegment, isActionReset } from './actions';
+
+import {
+	isActionAddSegment,
+	isActionSetSegment,
+	isActionRemoveSegment,
+	isActionReset,
+} from './actions';
 
 export interface ReducerState {
 	segments: string[];
@@ -26,6 +32,17 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 	if (isActionSetSegment(action)) {
 		const segments = [...state.segments];
 		segments[action.data.index] = action.data.segment;
+		const resolved = resolve(...segments);
+		return {
+			...state,
+			segments,
+			resolved,
+		};
+	}
+
+	if (isActionRemoveSegment(action)) {
+		const segments = [...state.segments];
+		segments.splice(action.data.index, 1);
 		const resolved = resolve(...segments);
 		return {
 			...state,
