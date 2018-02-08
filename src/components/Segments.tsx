@@ -11,7 +11,7 @@ const Segments = (props: Props) => {
 	for (let i = 0; i < props.segmentCount + 1; i++) {
 		children.push(
 			<div className="Segments-item" key={i}>
-				<SegmentInput index={i} />
+				<SegmentInput index={i} autoFocus={i === 0} />
 			</div>
 		);
 	}
