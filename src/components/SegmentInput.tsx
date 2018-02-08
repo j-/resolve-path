@@ -6,6 +6,7 @@ export interface Props {
 	autoFocus?: boolean;
 	onChange: (value: string) => void;
 	onFocus: () => void;
+	onRemove: () => void;
 }
 
 export default class SegmentInput extends React.PureComponent<Props> {
@@ -18,17 +19,23 @@ export default class SegmentInput extends React.PureComponent<Props> {
 	}
 
 	render () {
-		const { value, autoFocus, onChange, onFocus } = this.props;
+		const { value, autoFocus, onChange, onFocus, onRemove } = this.props;
 		return (
-			<input
-				className="SegmentInput pt-input pt-fill pt-large"
-				type="text"
-				value={value}
-				autoFocus={autoFocus}
-				onChange={(e) => onChange(e.currentTarget.value)}
-				onFocus={onFocus}
-				ref={(el) => this.input = el as HTMLInputElement}
-			/>
+			<div className="SegmentInput pt-input-group pt-large">
+				<input
+					className="SegmentInput-input pt-input pt-fill"
+					type="text"
+					value={value}
+					autoFocus={autoFocus}
+					onChange={(e) => onChange(e.currentTarget.value)}
+					onFocus={onFocus}
+					ref={(el) => this.input = el as HTMLInputElement}
+				/>
+				<button
+					className="pt-button pt-minimal pt-icon-large pt-icon-cross"
+					onClick={onRemove}
+				/>
+			</div>
 		);
 	}
 }
