@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Resolved.css';
 
 export interface Props {
 	resolved: string;
@@ -6,7 +7,12 @@ export interface Props {
 
 const Resolved = (props: Props) => (
 	<div className="Resolved">
-		{props.resolved}
+		<input
+			className="pt-input pt-fill Resolved-input"
+			type="text"
+			readOnly={true}
+			value={props.resolved}
+		/>
 	</div>
 );
 

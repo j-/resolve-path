@@ -1,0 +1,8 @@
+.Segments {
+	display: flex;
+	flex-direction: column;
+}
+
+.Segments > .Segments-item {
+	padding: 1em 0;
+}

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import SegmentInput from '../containers/SegmentInput';
+import './Segments.css';
 
 export interface Props {
 	segmentCount: number;
