@@ -15,7 +15,7 @@ export interface ReducerState {
 
 const DEFAULT_STATE: ReducerState = {
 	segments: [],
-	resolved: '',
+	resolved: '/',
 };
 
 const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
