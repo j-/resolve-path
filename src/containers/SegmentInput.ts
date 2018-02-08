@@ -1,11 +1,12 @@
 import { Dispatch, AnyAction } from 'redux';
 import { connect } from 'react-redux';
 import SegmentInput from '../components/SegmentInput';
-import { ReducerState, getSegmentAtIndex } from '../store';
+import { ReducerState, getSegmentAtIndex, getSegmentCount } from '../store';
 import { setSegment, setFocus, removeSegment } from '../store/actions';
 
 interface StateProps {
 	value: string;
+	showRemoveButton: boolean;
 }
 
 interface DispatchProps {
@@ -20,6 +21,7 @@ interface OwnProps {
 
 const mapStateToProps = (state: ReducerState, props: OwnProps): StateProps => ({
 	value: getSegmentAtIndex(state, props.index) || '',
+	showRemoveButton: getSegmentCount(state) > 0 && props.index < getSegmentCount(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>, props: OwnProps): DispatchProps => ({

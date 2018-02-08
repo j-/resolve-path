@@ -4,6 +4,7 @@ import './SegmentInput.css';
 export interface Props {
 	value: string;
 	autoFocus?: boolean;
+	showRemoveButton: boolean;
 	onChange: (value: string) => void;
 	onFocus: () => void;
 	onRemove: () => void;
@@ -19,7 +20,7 @@ export default class SegmentInput extends React.PureComponent<Props> {
 	}
 
 	render () {
-		const { value, autoFocus, onChange, onFocus, onRemove } = this.props;
+		const { value, autoFocus, showRemoveButton, onChange, onFocus, onRemove } = this.props;
 		return (
 			<div className="SegmentInput pt-input-group pt-large">
 				<input
@@ -31,10 +32,10 @@ export default class SegmentInput extends React.PureComponent<Props> {
 					onFocus={onFocus}
 					ref={(el) => this.input = el as HTMLInputElement}
 				/>
-				<button
+				{showRemoveButton && <button
 					className="pt-button pt-minimal pt-icon-large pt-icon-cross"
 					onClick={onRemove}
-				/>
+				/>}
 			</div>
 		);
 	}
