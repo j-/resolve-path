@@ -6,3 +6,7 @@
 .Segments > .Segments-item {
 	padding: 1em 0;
 }
+
+.Segments > .Segments-item:last-child:not(:nth-child(1)) {
+	opacity: 0.5;
+}
