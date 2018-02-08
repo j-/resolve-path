@@ -20,7 +20,13 @@ const Segments = (props: Props) => {
 	const keyDownHandler = (e: React.KeyboardEvent<HTMLDivElement>) => {
 		switch (e.key) {
 			case 'Enter':
+			case 'ArrowDown':
+				e.preventDefault();
 				props.setFocus(props.focusIndex + 1);
+				break;
+			case 'ArrowUp':
+				e.preventDefault();
+				props.setFocus(props.focusIndex - 1);
 				break;
 			default:
 		}
