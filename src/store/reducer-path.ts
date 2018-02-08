@@ -1,7 +1,6 @@
 import { Reducer } from 'redux';
-import { posix } from 'path';
+import { resolve } from 'path';
 import { isActionAddSegment, isActionSetSegment, isActionReset } from './actions';
-const { resolve } = posix;
 
 export interface ReducerState {
 	segments: string[];
