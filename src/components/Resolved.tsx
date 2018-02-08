@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './Resolved.css';
 
+const copy = require('clipboard-copy');
+
 export interface Props {
 	resolved: string;
 }
@@ -15,6 +17,7 @@ const Resolved = (props: Props) => (
 		/>
 		<button
 			className="pt-button pt-minimal pt-icon-large pt-intent-primary pt-icon-clipboard"
+			onClick={() => copy(props.resolved)}
 		/>
 	</div>
 );
