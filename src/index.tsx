@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import '@blueprintjs/core/lib/css/blueprint.css';
 import { createStore } from 'redux';
 import rootReducer from './store';
 import { composeWithDevTools } from 'redux-devtools-extension';
