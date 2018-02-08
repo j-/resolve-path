@@ -4,7 +4,7 @@
 }
 
 .Segments > .Segments-item {
-	padding: 1em 0;
+	margin: 1em 0;
 }
 
 .Segments > .Segments-item:last-child:not(:nth-child(1)) {

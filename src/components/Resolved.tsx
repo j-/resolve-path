@@ -6,12 +6,15 @@ export interface Props {
 }
 
 const Resolved = (props: Props) => (
-	<div className="Resolved">
+	<div className="Resolved pt-input-group pt-large">
 		<input
-			className="pt-input pt-fill pt-large Resolved-input"
+			className="Resolved-input pt-input pt-fill"
 			type="text"
 			readOnly={true}
 			value={props.resolved}
+		/>
+		<button
+			className="pt-button pt-minimal pt-icon-large pt-intent-primary pt-icon-clipboard"
 		/>
 	</div>
 );
