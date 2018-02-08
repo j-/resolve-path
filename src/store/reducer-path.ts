@@ -43,3 +43,15 @@ const reducer: Reducer<ReducerState> = (state = DEFAULT_STATE, action) => {
 };
 
 export default reducer;
+
+export const getSegmentCount = (state: ReducerState): number => (
+	state.segments.length
+);
+
+export const getSegmentAtIndex = (state: ReducerState, index: number): string => (
+	state.segments[index]
+);
+
+export const getResolvedPath = (state: ReducerState): string => (
+	state.resolved
+);
