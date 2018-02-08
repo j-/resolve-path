@@ -20,7 +20,7 @@ export default class SegmentInput extends React.PureComponent<Props> {
 	}
 
 	render () {
-		const { value, autoFocus, showRemoveButton, onChange, onFocus, onRemove } = this.props;
+		const { value, autoFocus, showRemoveButton } = this.props;
 		return (
 			<div className="SegmentInput pt-input-group pt-large">
 				<input
@@ -28,15 +28,33 @@ export default class SegmentInput extends React.PureComponent<Props> {
 					type="text"
 					value={value}
 					autoFocus={autoFocus}
-					onChange={(e) => onChange(e.currentTarget.value)}
-					onFocus={onFocus}
-					ref={(el) => this.input = el as HTMLInputElement}
+					onChange={this.handleInputChange}
+					onFocus={this.handleInputFocus}
+					ref={this.setInputRef}
 				/>
 				{showRemoveButton && <button
 					className="pt-button pt-minimal pt-icon-cross"
-					onClick={onRemove}
+					onClick={this.handleButtonClick}
 				/>}
 			</div>
 		);
+	}
+
+	private handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		this.props.onChange(e.currentTarget.value);
+	}
+
+	private handleInputFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+		this.props.onFocus();
+	}
+
+	private handleButtonClick = (e: React.MouseEvent<HTMLInputElement>) => {
+		e.preventDefault();
+		e.stopPropagation();
+		this.props.onRemove();
+	}
+
+	private setInputRef = (el: HTMLInputElement) => {
+		this.input = el;
 	}
 }

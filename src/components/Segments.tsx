@@ -18,6 +18,9 @@ const Segments = (props: Props) => {
 		);
 	}
 	const keyDownHandler = (e: React.KeyboardEvent<HTMLDivElement>) => {
+		if ((e.target as HTMLDivElement).tagName !== 'INPUT') {
+			return;
+		}
 		switch (e.key) {
 			case 'Enter':
 			case 'ArrowDown':
