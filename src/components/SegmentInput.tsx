@@ -26,6 +26,9 @@ export default class SegmentInput extends React.PureComponent<Props> {
 				<input
 					className="SegmentInput-input pt-input pt-fill"
 					type="text"
+					autoCapitalize="off"
+					autoComplete="off"
+					autoCorrect="off"
 					value={value}
 					autoFocus={autoFocus}
 					onChange={this.handleInputChange}
